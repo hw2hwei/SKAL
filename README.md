@@ -5,7 +5,7 @@ This is the Pytorch implementation of SKAL for remote sensing scene image classi
 Pytorch 1.7, python 3.8, CUDA 11.0
 
 # Usage
-training (followed by validation):
+Ttrain the model seperately at two scales (followed by validation):
 
 training scale1: python main.py --dataset selected_dataset --arch selected_cnn_arch --mode s1 
 
