@@ -17,10 +17,14 @@ Train the model seperately at two scales (followed by validation):
 # Results
 NWPU_RESISC45  
 
-|  Method                   | 10\% for training |
+|  Method                   | 10\% for training | 20\% for training |
 |  ----  | ----  |
-| GoogleNet_{global}        |      89.40     |
-| GoogleNet_{global+local}  | 90.41          |
+| GoogleNet_{global}        |      77.44        |      83.69        |
+| GoogleNet_{global+local}  |      80.28        |      85.34        |
+| ResNet18_{global}         |      88.91        |      91.77        |
+| ResNet18_{global+local}   |      90.04        |      92.79        |
+| GoogleNet_{global}        |      89.40        |      91.93        |
+| GoogleNet_{global+local}  |      90.41        |      92.95        |
 
 
 
