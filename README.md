@@ -16,15 +16,14 @@ Train the model seperately at two scales (followed by validation):
 
 # Results
 NWPU_RESISC45
-|  表头   | 表头  |
-|  ----  | ----  |
-| 89.40  | 单元格 |
-| 90.41  | 单元格 |
+|  Method                   | 10% for training |
+| GoogleNet_{global}        |      89.40     |
+| GoogleNet_{global+local}  | 90.41          |
 
 <table border="0.5px" align="left" bordercolor="black" width="80%" height="100px">
     <tr align="center">
-        <td>GoogleNet_{global}</td>
-        <td>GoogleNet_{global+local}</td>
+        <td></td>
+        <td></td>
     </tr>
     <tr align="center">
         <td>89.40</td>
