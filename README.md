@@ -19,14 +19,14 @@ Train the model seperately at two scales (followed by validation):
 > second, training local_area:   python main.py  --dataset selected_dataset  --arch selected_cnn_arch  --mode s2 
 
 # Results
-<table border="1px" align="center" bordercolor="black" width="80%" height="100px">
+<table border="0.5px" align="left" bordercolor="black" width="80%" height="100px">
     <tr align="center">
         <td>GoogleNet</td>
         <td>GoogleNet_{global+local}</td>
     </tr>
     <tr align="center">
-        <td>account</td>
-        <td>string</td>
+        <td>89.40</td>
+        <td>90.41</td>
     </tr>
 </table>
 
