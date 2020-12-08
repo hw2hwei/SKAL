@@ -6,8 +6,9 @@ Pytorch 1.7, python 3.8, CUDA 11.0
 
 # Usage
 Firstly, please build the training and validation list:
-> training scale1: python main.py --dataset selected_dataset --arch selected_cnn_arch --mode s1 
+> cd ./datasets 
 
+> python build_list --data_dir your_dataset/images --out_dir your_dataset/splits --train_ratio custom_ratio(default: 0.5)
 
 Ttrain the model seperately at two scales (followed by validation):
 
