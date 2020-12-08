@@ -13,6 +13,8 @@ Firstly, build the training and validation list:
 
 Then, train the model seperately at two scales (followed by validation):
 
+> cd ..
+
 > training scale1: python main.py  --dataset selected_dataset  --arch selected_cnn_arch  --mode s1 
 
 > training scale2: python main.py  --dataset selected_dataset  --arch selected_cnn_arch  --mode s2 
