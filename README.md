@@ -2,21 +2,17 @@
 This is the Pytorch implementation of SKAL for remote sensing scene image classification, which is accepted by TNNLS 2020.
 
 # Requirements
-Pytorch 1.7, python 3.8, CUDA 11.0
+Pytorch 1.7, python 3.8, CUDA 11.0  
 
 # Usage
 Build the training and validation list:
-> cd ./datasets 
+> cd ./datasets  
+> python build_list  --data_dir your_dataset/images  --out_dir your_dataset/splits  --train_ratio 0.5  
 
-> python build_list  --data_dir your_dataset/images  --out_dir your_dataset/splits  --train_ratio 0.5
-
-Train the model seperately at two scales (followed by validation):
-
-> cd ..
-
-> firstly, training global_area: python main.py  --dataset selected_dataset  --arch selected_cnn_arch  --mode s1 
-
-> second, training local_area:   python main.py  --dataset selected_dataset  --arch selected_cnn_arch  --mode s2 
+Train the model seperately at two scales (followed by validation):  
+> cd ..  
+> firstly, training global_area: python main.py  --dataset selected_dataset  --arch selected_cnn_arch  --mode s1  
+> second, training local_area:   python main.py  --dataset selected_dataset  --arch selected_cnn_arch  --mode s2  
 
 # Results
 NWPU_RESISC45
