@@ -196,26 +196,25 @@ if __name__ == '__main__':
 
     beg_time = time()
     for data in data_list:
-        if 'thermal_power_station_116.jpg' not in data['img_path']:
-            cnt_total += 1
-            img_pth = data['img_path']
-            label = int(data['label'])
-            print (cnt_total, ': ', img_pth)   
+        cnt_total += 1
+        img_pth = data['img_path']
+        label = int(data['label'])
+        print (cnt_total, ': ', img_pth)   
 
-            img_save_dir = './attvisual_image'
-            if not os.path.exists(img_save_dir):
-                os.makedirs(img_save_dir)
+        img_save_dir = './attvisual_image'
+        if not os.path.exists(img_save_dir):
+            os.makedirs(img_save_dir)
 
-            img = Image.open(img_pth).convert('RGB')
-            img_tensor_s1 = transform_s1(img)
-            img_tensor_s2 = transform_s2(img)
-            img_tensor_s1 = img_tensor_s1.view(1, img_tensor_s1.size(0), img_tensor_s1.size(1), img_tensor_s1.size(2)).cuda()
-            img_tensor_s2 = img_tensor_s2.view(1, img_tensor_s2.size(0), img_tensor_s2.size(1), img_tensor_s2.size(2)).cuda()
-            pred, [h_str, h_end, w_str, w_end], heat_map = net(img_tensor_s1, img_tensor_s2, is_training=False)
-            _, pred = torch.max(pred, dim=1)
-            pred = int(pred.cpu().detach().numpy())
-            pred_list.append(pred)
-            label_list.append(label)
+        img = Image.open(img_pth).convert('RGB')
+        img_tensor_s1 = transform_s1(img)
+        img_tensor_s2 = transform_s2(img)
+        img_tensor_s1 = img_tensor_s1.view(1, img_tensor_s1.size(0), img_tensor_s1.size(1), img_tensor_s1.size(2)).cuda()
+        img_tensor_s2 = img_tensor_s2.view(1, img_tensor_s2.size(0), img_tensor_s2.size(1), img_tensor_s2.size(2)).cuda()
+        pred, [h_str, h_end, w_str, w_end], heat_map = net(img_tensor_s1, img_tensor_s2, is_training=False)
+        _, pred = torch.max(pred, dim=1)
+        pred = int(pred.cpu().detach().numpy())
+        pred_list.append(pred)
+        label_list.append(label)
 
             # heat_map = heat_map[0].cpu().detach().numpy()
             # h_str = h_str[0]
