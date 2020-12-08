@@ -30,18 +30,12 @@ NWPU_RESISC45
         <td>89.40</td>
         <td>90.41</td>
     </tr>
-</table>
-> 
-
+</table>  
 
 # Citation
 If you want to use the code, please cite: 
-> title={Looking Closer at the Scene: Multi-Scale Representation Learning for Remote Sensing Image Scene Classification},
-
-> author={Q. Wang, W. Huang, Z. Xiong, and X. Li},
-
-> journal={IEEE Transactions on Neural Networks and Learning Systems},
-
-> year={2020},
-
+> title={Looking Closer at the Scene: Multi-Scale Representation Learning for Remote Sensing Image Scene Classification},  
+> author={Q. Wang, W. Huang, Z. Xiong, and X. Li},  
+> journal={IEEE Transactions on Neural Networks and Learning Systems},  
+> year={2020},  
 > }
