@@ -6,6 +6,7 @@ Pytorch 1.7, python 3.8, CUDA 11.0
 
 # Usage
 training (followed by validation):
+
 training scale1: python main.py --dataset selected_dataset --arch selected_cnn_arch --mode s1 
 training scale2: python main.py --dataset selected_dataset --arch selected_cnn_arch --mode s2 
 
