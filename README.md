@@ -5,16 +5,17 @@ This is the Pytorch implementation of SKAL for remote sensing scene image classi
 Pytorch 1.7, python 3.8, CUDA 11.0
 
 # Usage
-Firstly, please build the training and validation list:
+Firstly, build the training and validation list:
 > cd ./datasets 
 
-> python build_list --data_dir your_dataset/images --out_dir your_dataset/splits --train_ratio custom_ratio(default: 0.5)
+> python build_list  --data_dir your_dataset/images  --out_dir your_dataset/splits  --train_ratio custom_ratio(default: 0.5)
 
-Ttrain the model seperately at two scales (followed by validation):
 
-> training scale1: python main.py --dataset selected_dataset --arch selected_cnn_arch --mode s1 
+Then, train the model seperately at two scales (followed by validation):
 
-> training scale2: python main.py --dataset selected_dataset --arch selected_cnn_arch --mode s2 
+> training scale1: python main.py  --dataset selected_dataset  --arch selected_cnn_arch  --mode s1 
+
+> training scale2: python main.py  --dataset selected_dataset  --arch selected_cnn_arch  --mode s2 
 
 # Citation
 If you want to use the code, please cite: 
