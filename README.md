@@ -21,7 +21,7 @@ Build the training and validation list:
 > cd ./datasets  
 > python build_list  --data_dir your_dataset/images  --out_dir your_dataset/splits  --train_ratio 0.5  
 
-Train the model seperately at two scales (followed by validation):  
+Train the model at two seperate scales (followed by validation):  
 > cd ..  
 > firstly, training global_area: python main.py  --dataset selected_dataset  --arch selected_cnn_arch  --mode s1  
 > second, training local_area:   python main.py  --dataset selected_dataset  --arch selected_cnn_arch  --mode s2  
