@@ -6,15 +6,15 @@ Pytorch 1.7, python 3.8, CUDA 11.0
 
 # Usage
 Dataset would be arranged as the following form (taking AID as an example):
-> _datasets  
-> |_AID
-  >   |__images  
-      |__agricultural  
-      |__airplane  
-      |__baseballdiamond  
-      |__beach  
+> -datasets  
+> --AID  
+  >   ---images  
+      ----agricultural  
+      ----airplane  
+      ----baseballdiamond  
+      ----beach  
       ...  
-  >   |_splits  
+  >   ---splits  
   >   ...
   
 Build the training and validation list:
