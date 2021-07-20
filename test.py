@@ -1,8 +1,7 @@
+import os
 import torch
 import torch.nn as nn
-import os
 import torchvision.transforms as transforms
-from models.racnn import *
 from args import args_parser
 from val import validation
 from datasets import load_datasets
@@ -150,10 +149,10 @@ if __name__ == '__main__':
         n_classes = 45
     elif args.dataset=='RSSCN7':
         n_classes = 7
-    net = RACNN(arch=args.arch,  \
-                n_classes=n_classes, 
-                mode=args.mode,
-                energy_thr=args.energy_thr).cuda()
+    net = FullModel(arch=args.arch,  
+                    n_classes=n_classes, 
+                    mode=args.mode,
+                    energy_thr=args.energy_thr).cuda()
     resume_path = args.resume_path.replace('dataset', args.dataset)   \
                                   .replace('arch', args.arch)  \
                                   .replace('mode', str(args.mode))
@@ -216,31 +215,31 @@ if __name__ == '__main__':
         pred_list.append(pred)
         label_list.append(label)
 
-            # heat_map = heat_map[0].cpu().detach().numpy()
-            # h_str = h_str[0]
-            # h_end = h_end[0]
-            # w_str = w_str[0]
-            # w_end = w_end[0]
+        heat_map = heat_map[0].cpu().detach().numpy()
+        h_str = h_str[0]
+        h_end = h_end[0]
+        w_str = w_str[0]
+        w_end = w_end[0]
 
-            # img = cv2.cvtColor(np.asarray(img), cv2.COLOR_RGB2BGR)
-            # img_h, img_w = img.shape[:2]
-            # h_str = (h_str*img_h).astype(np.int)
-            # h_end = (h_end*img_h).astype(np.int)
-            # w_str = (w_str*img_w).astype(np.int)
-            # w_end = (w_end*img_w).astype(np.int)
-            # img_save_path = img_save_dir + '/' + img_pth.split('/')[5]
+        img = cv2.cvtColor(np.asarray(img), cv2.COLOR_RGB2BGR)
+        img_h, img_w = img.shape[:2]
+        h_str = (h_str*img_h).astype(np.int)
+        h_end = (h_end*img_h).astype(np.int)
+        w_str = (w_str*img_w).astype(np.int)
+        w_end = (w_end*img_w).astype(np.int)
+        img_save_path = img_save_dir + '/' + img_pth.split('/')[5]
 
-            # if cnt_total > 300:
-            #     break        
+#         if cnt_total > 300:
+#             break        
 
-            # img
-            # if pred != label:
-            #     img_save_path = img_save_path.replace('.jpg', '_wrong_{}.jpg'.format(label2cls_list[str(pred)]))  \
-            #                                  .replace('attvisual_image/', 'attvisual_image/wrong/')
-            #     show_cam_on_image(h_str,h_end,w_str,w_end, img, pred, heat_map, img_save_path)
-            # else:        
-            #     img_save_path = img_save_path.replace('attvisual_image/', 'attvisual_image/true/')
-            #     show_cam_on_image(h_str,h_end,w_str,w_end, img, pred, heat_map, img_save_path)
+        # img
+        if pred != label:
+            img_save_path = img_save_path.replace('.jpg', '_wrong_{}.jpg'.format(label2cls_list[str(pred)]))  \
+                                         .replace('attvisual_image/', 'attvisual_image/wrong/')
+            show_cam_on_image(h_str,h_end,w_str,w_end, img, pred, heat_map, img_save_path)
+        else:        
+            img_save_path = img_save_path.replace('attvisual_image/', 'attvisual_image/true/')
+            show_cam_on_image(h_str,h_end,w_str,w_end, img, pred, heat_map, img_save_path)
     end_time = time()
     print ("time: ", end_time - beg_time)
 
