@@ -1,6 +1,7 @@
 import os
 import torch
 import torch.nn as nn
+from models.full_model import *
 import torchvision.transforms as transforms
 from args import args_parser
 from val import validation
