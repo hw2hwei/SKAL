@@ -203,9 +203,15 @@ if __name__ == '__main__':
         print (cnt_total, ': ', img_pth)   
 
         img_save_dir = './attvisual_image'
+        img_true_save_dir = './attvisual_image/true'
+        img_false_save_dir = './attvisual_image/false'
         sta_save_dir = './save_status'
         if not os.path.exists(img_save_dir):
             os.makedirs(img_save_dir)
+        if not os.path.exists(img_true_save_dir):
+            os.makedirs(img_true_save_dir)
+        if not os.path.exists(img_false_save_dir):
+            os.makedirs(img_false_save_dir)
         if not os.path.exists(sta_save_dir):
             os.makedirs(sta_save_dir)
 
