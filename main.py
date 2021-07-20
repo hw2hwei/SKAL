@@ -10,7 +10,7 @@ from models.full_model import *
 import pdb
 from time import time
 
-os.environ["CUDA_VISIBLE_DEVICES"]="1"
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
 args = args_parser()
 best_acc = 0
 
@@ -44,7 +44,8 @@ if __name__ == '__main__':
                     mode=args.mode,
                     energy_thr=args.energy_thr).cuda()
     if os.path.exists(resume_path):
-        resume = torch.load(resume_path)
+        resume = torch.load(
+        )
         net.load_state_dict(resume['state_dict'], strict=False)
         print ('Load checkpoint {}'.format(resume_path))
 
