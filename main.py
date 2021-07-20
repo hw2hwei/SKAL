@@ -1,6 +1,6 @@
+import os
 import torch
 import torch.nn as nn
-import os
 from args import args_parser
 from train import train
 from val import validation
@@ -43,9 +43,10 @@ if __name__ == '__main__':
                     n_classes=n_classes, 
                     mode=args.mode,
                     energy_thr=args.energy_thr).cuda()
+    if not os.path.exists('checkpoints'):
+        os.mkdir('checkpoints')
     if os.path.exists(resume_path):
-        resume = torch.load(
-        )
+        resume = torch.load(resume_path)
         net.load_state_dict(resume['state_dict'], strict=False)
         print ('Load checkpoint {}'.format(resume_path))
 
