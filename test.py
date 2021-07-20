@@ -136,6 +136,7 @@ def plot_confusion_matrix(dataset, true_list, pred_list, label2cls_list):
     cb.ax.tick_params(labelsize=barsize)
 
     plt.tight_layout()
+
     plt.savefig('./save_status/confusion_matrix_' + dataset + '.pdf', format='pdf')
     # plt.show()
 
@@ -202,8 +203,11 @@ if __name__ == '__main__':
         print (cnt_total, ': ', img_pth)   
 
         img_save_dir = './attvisual_image'
+        sta_save_dir = './save_status'
         if not os.path.exists(img_save_dir):
             os.makedirs(img_save_dir)
+        if not os.path.exists(sta_save_dir):
+            os.makedirs(sta_save_dir)
 
         img = Image.open(img_pth).convert('RGB')
         img_tensor_s1 = transform_s1(img)
