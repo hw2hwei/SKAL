@@ -20,7 +20,7 @@ Build the training and validation list (Taking AID as an example):
 > cd ./datasets  
 > python build_list  --data_dir AID/images  --out_dir AID/splits  --train_ratio 0.5  
 
-Train the model at two seperate scales (followed by validation):  
+Train the model at two seperate scales (validate the model every epoch):  
 > cd ..  
 > firstly, training global_area: python main.py  --dataset selected_dataset  --arch selected_cnn_arch  --mode s1  
 > secondly, training local_area: python main.py  --dataset selected_dataset  --arch selected_cnn_arch  --mode s2  
