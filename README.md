@@ -6,25 +6,24 @@ Pytorch 1.7, python 3.8, CUDA 11.0
 
 # Usage
 Dataset would be arranged as the following form (taking AID as an example):
-> -datasets  
-> --AID  
-  >   ---images  
-      ----agricultural  
-      ----airplane  
-      ----baseballdiamond  
-      ----beach  
-      ...  
-  >   ---splits  
-  >   ...
+> datasets  
+> -AID  
+  >   --images  
+      ---agricultural  
+      ---airplane  
+      ---baseballdiamond  
+      ---beach  
+  >   --splits  
+
   
-Build the training and validation list:
+Build the training and validation list (Taking AID as an example):
 > cd ./datasets  
-> python build_list  --data_dir your_dataset/images  --out_dir your_dataset/splits  --train_ratio 0.5  
+> python build_list  --data_dir AID/images  --out_dir AID/splits  --train_ratio 0.5  
 
 Train the model at two seperate scales (followed by validation):  
 > cd ..  
 > firstly, training global_area: python main.py  --dataset selected_dataset  --arch selected_cnn_arch  --mode s1  
-> second, training local_area:   python main.py  --dataset selected_dataset  --arch selected_cnn_arch  --mode s2  
+> secondly, training local_area: python main.py  --dataset selected_dataset  --arch selected_cnn_arch  --mode s2  
 
 # Results
 NWPU_RESISC45  
