@@ -8,7 +8,7 @@ Pytorch 1.7, python 3.8, CUDA 11.0
 Dataset would be arranged as the following form (taking AID as an example):
 > ./datasets  
 > ./datasets/AID  
-> ./datasets/AID/plits  
+> ./datasets/AID/splits  
 > ./datasets/AID/images  
   ./datasets/AID/images/agricultural  
   ./datasets/AID/images/airplane  
