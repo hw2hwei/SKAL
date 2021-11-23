@@ -1,4 +1,4 @@
-# SKAL
+# [Looking Closer at the Scene: Multi-Scale Representation Learning for Remote Sensing Image Scene Classification](https://ieeexplore.ieee.org/document/9298485)
 This is the Pytorch implementation of SKAL for remote sensing scene image classification, which is accepted by TNNLS 2020.
 
 # Requirements
