@@ -4,8 +4,8 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Build the splits of remote datasets')
 parser.add_argument('--root', default='.', type=str)
-parser.add_argument('--data_dir', default='RSSCN7/images', type=str)
-parser.add_argument('--out_dir', default='RSSCN7/splits', type=str)
+parser.add_argument('--data_dir', default='./RSSCN7/images', type=str)
+parser.add_argument('--out_dir', default='./RSSCN7/splits', type=str)
 parser.add_argument('--train_ratio', default=0.50, type=float)
 
 
@@ -35,6 +35,7 @@ def build_classInd(root, data_dir, out_dir):
 def build_list(root, data_dir, out_dir, train_ratio):
 	# build classInd
 	classInd = build_classInd(root, data_dir, out_dir)
+	print (classInd)
 
 	# build train and val list
 	train_list = []
@@ -46,8 +47,9 @@ def build_list(root, data_dir, out_dir, train_ratio):
 
 			files = []
 			for f in fs:
-				_, _, cls = dir.split('/')
-				files.append(dir + '/' + f + ' ' + classInd[cls])
+				cls = dir.replace(data_dir, '').strip('\\').strip('/')
+				print (dir)
+				files.append(os.path.join(dir, f + ' ' + classInd[cls]))
 
 			train_list_each = files[0:train_num]
 			val_list_each = files[train_num:]
