@@ -18,7 +18,7 @@ Dataset would be arranged as the following form (taking AID as an example):
   
 Build the training and validation list (Taking AID as an example):
 > cd ./datasets  
-> python build_list  --data_dir AID/images  --out_dir AID/splits  --train_ratio 0.5  
+> python build_list  --data_dir ./AID/images  --out_dir ./AID/splits  --train_ratio 0.5  
 
 Train the model at two seperate scales (validate the model every epoch):  
 > cd ..  
